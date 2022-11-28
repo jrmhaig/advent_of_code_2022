@@ -1,3 +1,8 @@
+# Deploying to Github
+
+See https://github.com/gitname/react-gh-pages for information about deploying
+to Github pages.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

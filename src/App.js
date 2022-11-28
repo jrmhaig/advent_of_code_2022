@@ -1,20 +1,19 @@
+import { Routes, Route } from "react-router-dom";
 import 'bulma/css/bulma.min.css';
+
+import Layout from './components/Layout';
+import Home from './components/Home';
+import DayOne from './components/DayOne';
 
 function App() {
   return (
-    <section className="section">
-      <div className="columns">
-        <div className="column is-3">
-          <p>Sidebar</p>
-        </div>
-        <div className="column is-9">
-          <section className="main">
-            <p>Main stuff</p>
-          </section>
-        </div>
-      </div>
-    </section>
-  )
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="day_01" element={<DayOne />} />
+      </Route>
+    </Routes>
+  );
 }
 
 export default App;

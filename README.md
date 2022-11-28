@@ -1,4 +1,4 @@
-# Deploying to Github
+# Deploying to Github Pages
 
 See https://github.com/gitname/react-gh-pages for information about deploying
 to Github pages.

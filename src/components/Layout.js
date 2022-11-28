@@ -6,7 +6,7 @@ const Layout = () => {
       <section className="hero is-primary">
         <div className="hero-body">
           <div className="container">
-            <h1 class="title">
+            <h1 className="title">
               <Link to="">
                 Advent of Code 2022 solutions
               </Link>
@@ -15,11 +15,12 @@ const Layout = () => {
         </div>
       </section>
       <section className="section">
-        <div class="container">
+        <div className="container">
           <div className="main-content columns is-full-height">
             <aside className="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile">
+              <p className="menu-label is-hidden-touch">Solutions</p>
               <ul className="menu-list">
-                <p className="menu-label is-hidden-touch">Solutions</p>
+                <li><Link to='test_day'>Test day</Link></li>
                 <li><Link to='day_01'>Day one</Link></li>
               </ul>
             </aside>

@@ -1,6 +1,6 @@
 import { Outlet, Link } from 'react-router-dom'
 
-const Layout = () => {
+const Layout = (props) => {
   return (
     <>
       <section className="hero is-primary">
@@ -20,8 +20,9 @@ const Layout = () => {
             <aside className="column is-2 is-narrow-mobile is-fullheight section is-hidden-mobile">
               <p className="menu-label is-hidden-touch">Solutions</p>
               <ul className="menu-list">
-                <li><Link to='test_day'>Test day</Link></li>
-                <li><Link to='day_01'>Day one</Link></li>
+                {props.solutions.map(
+                  (solution, i) => solution.live && <li key={i}><Link to={solution.path}>{solution.title}</Link></li>
+                )}
               </ul>
             </aside>
 

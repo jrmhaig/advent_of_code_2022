@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const TestDay = (props) => {
+const PuzzlePage = (props) => {
   const [inputData, setInputData] = useState('');
   const [partOneSolution, setPartOneSolution] = useState(null);
   const [partOneWorking, setPartOneWorking] = useState(null);
@@ -33,7 +33,7 @@ const TestDay = (props) => {
       </div>
 
       {partOneSolution && <p>Solution: {partOneSolution}</p>}
-      {partOneWorking && <div className="box">{partOneWorking.map(row => <p>{row}</p>)}</div>}
+      {Array.isArray(partOneWorking) && <div className="box">{partOneWorking.map(row => <p>{row}</p>)}</div>}
 
       <div className="field">
         <div className="control">
@@ -42,9 +42,9 @@ const TestDay = (props) => {
       </div>
 
       {partTwoSolution && <p>Solution: {partTwoSolution}</p>}
-      {partTwoWorking && <div className="box">{partTwoWorking.map(row => <p>{row}</p>)}</div>}
+      {Array.isArray(partTwoWorking) && <div className="box">{partTwoWorking.map(row => <p>{row}</p>)}</div>}
     </div >
   );
 }
 
-export default TestDay;
+export default PuzzlePage;

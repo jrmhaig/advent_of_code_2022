@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const TestDay = () => {
+const TestDay = (props) => {
   const [inputData, setInputData] = useState('');
   const [partOneSolution, setPartOneSolution] = useState(null);
   const [partOneWorking, setPartOneWorking] = useState(null);
@@ -8,48 +8,16 @@ const TestDay = () => {
   const [partTwoWorking, setPartTwoWorking] = useState(null);
 
   const partOne = () => {
-    const depths = inputData.split(/\r?\n/).map(n => +n);
-    const length = depths.length;
-    let newSolution = [`${depths[0]} (N/A - no previous measurement)`];
-    let tally = 0;
-    for (let i = 1; i < length; i++) {
-      if (depths[i] > depths[i - 1]) {
-        tally += 1;
-        newSolution.push(`${depths[i]} (increased) - ${tally}`);
-      } else if (depths[i] < depths[i - 1]) {
-        newSolution.push(`${depths[i]} (decreased)`);
-      } else {
-        newSolution.push(`${depths[i]} (no change)`);
-      }
-    }
-    setPartOneSolution(tally);
-    setPartOneWorking(newSolution);
+    props.solution.partOne({ inputData, setSolution: setPartOneSolution, setWorking: setPartOneWorking });
   }
 
   const partTwo = () => {
-    const depths = inputData.split(/\r?\n/).map(n => +n);
-    const length = depths.length;
-    let newSolution = [`${depths[2] + depths[1] + depths[0]} (N/A - no previous measurement)`];
-    let tally = 0;
-    for (let i = 3; i < length; i++) {
-      const a = depths[i] + depths[i - 1] + depths[i - 2];
-      const b = depths[i - 1] + depths[i - 2] + depths[i - 3];
-      if (a > b) {
-        tally += 1;
-        newSolution.push(`${a} (increased) - ${tally}`);
-      } else if (a < b) {
-        newSolution.push(`${a} (decreased)`);
-      } else {
-        newSolution.push(`${a} (no change)`);
-      }
-    }
-    setPartTwoSolution(tally);
-    setPartTwoWorking(newSolution);
+    props.solution.partTwo({ inputData, setSolution: setPartTwoSolution, setWorking: setPartTwoWorking });
   }
 
   return (
     <div className="container">
-      <h1 className="title is-3">Test (Day One from 2021)</h1>
+      <h1 className="title is-3">{props.title}</h1>
 
       <div className="field">
         <label className="label">Input data</label>

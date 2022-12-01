@@ -2,9 +2,7 @@ import BaseSolution from './BaseSolution'
 
 class Day24Solution extends BaseSolution {
   constructor() {
-    super(Date.parse('24 December 2022'));
-    this.path = 'day_24';
-    this.title = 'Day twenty four';
+    super(24);
     this.solved = false;
   }
 

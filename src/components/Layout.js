@@ -1,8 +1,10 @@
 import { Outlet, Link } from 'react-router-dom'
+import Navbar from "./Navbar";
 
 const Layout = (props) => {
   return (
     <>
+      <Navbar {...props} />
       <section className="hero is-primary">
         <div className="hero-body">
           <div className="container">

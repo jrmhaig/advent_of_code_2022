@@ -19,30 +19,40 @@ const PuzzlePage = (props) => {
     <div className="container">
       <h1 className="title is-3">{props.title}</h1>
 
-      <div className="field">
-        <label className="label">Input data</label>
-        <div className="control">
-          <textarea className="textarea" placeholder="Input data" onChange={event => setInputData(event.target.value)}></textarea>
+      <div className="block">
+        <p><a className="button is-info is-small" href={props.solution.githubLink}>Source on Github</a></p>
+      </div>
+
+      <div className="block">
+        <div className="field">
+          <label className="label">Input data</label>
+          <div className="control">
+            <textarea className="textarea" placeholder="Input data" onChange={event => setInputData(event.target.value)}></textarea>
+          </div>
         </div>
       </div>
 
-      <div className="field">
-        <div className="control">
-          <button className="button" onClick={partOne}>Solve part 1</button>
+      <div className="block">
+        <div className="field">
+          <div className="control">
+            <button className="button" onClick={partOne}>Solve part 1</button>
+          </div>
         </div>
+
+        {partOneSolution && <p>Solution: {partOneSolution}</p>}
+        {Array.isArray(partOneWorking) && <div className="box">{partOneWorking.map((row, i) => <p key={i}>{row}</p>)}</div>}
       </div>
 
-      {partOneSolution && <p>Solution: {partOneSolution}</p>}
-      {Array.isArray(partOneWorking) && <div className="box">{partOneWorking.map((row, i) => <p key={i}>{row}</p>)}</div>}
-
-      <div className="field">
-        <div className="control">
-          <button className="button" onClick={partTwo}>Solve part 2</button>
+      <div className="block">
+        <div className="field">
+          <div className="control">
+            <button className="button" onClick={partTwo}>Solve part 2</button>
+          </div>
         </div>
-      </div>
 
-      {partTwoSolution && <p>Solution: {partTwoSolution}</p>}
-      {Array.isArray(partTwoWorking) && <div className="box">{partTwoWorking.map((row, i) => <p key={i}>{row}</p>)}</div>}
+        {partTwoSolution && <p>Solution: {partTwoSolution}</p>}
+        {Array.isArray(partTwoWorking) && <div className="box">{partTwoWorking.map((row, i) => <p key={i}>{row}</p>)}</div>}
+      </div>
     </div >
   );
 }

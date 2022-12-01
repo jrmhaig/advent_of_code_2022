@@ -33,7 +33,7 @@ const PuzzlePage = (props) => {
       </div>
 
       {partOneSolution && <p>Solution: {partOneSolution}</p>}
-      {Array.isArray(partOneWorking) && <div className="box">{partOneWorking.map(row => <p>{row}</p>)}</div>}
+      {Array.isArray(partOneWorking) && <div className="box">{partOneWorking.map((row, i) => <p key={i}>{row}</p>)}</div>}
 
       <div className="field">
         <div className="control">
@@ -42,7 +42,7 @@ const PuzzlePage = (props) => {
       </div>
 
       {partTwoSolution && <p>Solution: {partTwoSolution}</p>}
-      {Array.isArray(partTwoWorking) && <div className="box">{partTwoWorking.map(row => <p>{row}</p>)}</div>}
+      {Array.isArray(partTwoWorking) && <div className="box">{partTwoWorking.map((row, i) => <p key={i}>{row}</p>)}</div>}
     </div >
   );
 }

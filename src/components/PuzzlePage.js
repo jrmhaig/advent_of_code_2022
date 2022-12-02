@@ -18,22 +18,10 @@ const PuzzlePage = (props) => {
   }
 
   return (
-    <div className="container">
-      <h1 className="title is-3">{props.title}</h1>
-
-      {props.solution.solved ||
-        <div className="notification is-danger">
-          This day's puzzle has not been solved yet.
-        </div>}
-
-      <div className="field is-grouped">
-        <p className="control">
-          <a className="button is-info is-small" href={props.solution.aocLink}>Puzzle on Advent of Code</a>
-        </p>
-        <p className="control">
-          <a className="button is-success is-small" href={props.solution.githubLink}>Source on Github</a>
-        </p>
-      </div>
+    <>
+      <p className="block">
+        <a className="tag is-small" href={props.solution.githubLink}>View the source of this solution on Github</a>
+      </p>
 
       <div className="block">
         <div className="field">
@@ -89,7 +77,7 @@ const PuzzlePage = (props) => {
           <div className="box">{partTwoWorking.map((row, i) => <p key={i}>{row}</p>)}</div>
         }
       </div>
-    </div >
+    </>
   );
 }
 

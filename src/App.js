@@ -1,9 +1,13 @@
 import { Routes, Route } from "react-router-dom";
+import { Fragment } from 'react';
 import 'bulma/css/bulma.min.css';
 
 import Layout from './components/Layout';
 import Home from './components/Home';
+import DayPage from './components/DayPage';
 import PuzzlePage from './components/PuzzlePage';
+import OtherSolutions from './components/OtherSolutions';
+import NotFound from './components/NotFound';
 
 import Day01Solution from './solutions/Day01Solution';
 import Day02Solution from './solutions/Day02Solution';
@@ -63,12 +67,16 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout solutions={solutions} />}>
-        <Route key="home" path="/" element={<Home />} />
-        {solutions.map(
-          (solution, i) => solution.live && <Route key={i} path={solution.path} element={<PuzzlePage title={solution.title} solution={solution} />} />
+        <Route index element={<Home />} />
+        {solutions.map((solution, i) => solution.live &&
+          <Route key={i} path={solution.path} element={<DayPage solution={solution} />}>
+            <Route index element={<PuzzlePage title={solution.title} solution={solution} />} />
+            <Route path="other_solutions" element={<OtherSolutions solution={solution} />} />
+          </Route>
         )}
+        <Route path="*" element={<NotFound />} />
       </Route>
-    </Routes>
+    </Routes >
   );
 }
 

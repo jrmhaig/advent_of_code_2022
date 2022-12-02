@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 class BaseSolution {
   constructor(id) {
     this.puzzleId = id;
@@ -17,6 +19,29 @@ class BaseSolution {
   partTwo(data) {
     data.setSolution('Not solved yet');
     data.setWorking(null);
+  }
+
+  async otherSolutions(setSolutions) {
+    // TODO: Work out how to get this path without having to have '/advent_of_code_2022/' at the start
+    const linksFile = `/advent_of_code_2022/data/solutions${String(this.puzzleId).padStart(2, '0')}.json`
+
+    try {
+      const result = await axios.get(
+        linksFile,
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      setSolutions({ data: result.data });
+    } catch (err) {
+      if (err.response.status === 404) {
+        setSolutions({ data: [] });
+      } else {
+        setSolutions({ error: 'Unable to fetch results' });
+      }
+    }
   }
 }
 

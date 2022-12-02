@@ -20,15 +20,15 @@ const PuzzlePage = (props) => {
       <h1 className="title is-3">{props.title}</h1>
 
       {props.solution.solved ||
-        <div class="notification is-danger">
+        <div className="notification is-danger">
           This day's puzzle has not been solved yet.
         </div>}
 
-      <div class="field is-grouped">
-        <p class="control">
+      <div className="field is-grouped">
+        <p className="control">
           <a className="button is-info is-small" href={props.solution.aocLink}>Puzzle on Advent of Code</a>
         </p>
-        <p class="control">
+        <p className="control">
           <a className="button is-success is-small" href={props.solution.githubLink}>Source on Github</a>
         </p>
       </div>

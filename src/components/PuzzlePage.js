@@ -4,8 +4,10 @@ const PuzzlePage = (props) => {
   const [inputData, setInputData] = useState('');
   const [partOneSolution, setPartOneSolution] = useState(null);
   const [partOneWorking, setPartOneWorking] = useState(null);
+  const [seePartOneWorking, setSeePartOneWorking] = useState(false);
   const [partTwoSolution, setPartTwoSolution] = useState(null);
   const [partTwoWorking, setPartTwoWorking] = useState(null);
+  const [seePartTwoWorking, setSeePartTwoWorking] = useState(false);
 
   const partOne = () => {
     props.solution.partOne({ inputData, setSolution: setPartOneSolution, setWorking: setPartOneWorking });
@@ -45,23 +47,47 @@ const PuzzlePage = (props) => {
       <div className="block">
         <div className="field">
           <div className="control">
-            <button className="button" onClick={partOne}>Solve part 1</button>
+            <div className="field is-grouped">
+              <p className="control">
+                <button className="button is-small" onClick={partOne}>Solve part 1</button>
+              </p>
+              {partOneWorking &&
+                <p className="control">
+                  <button className="button is-small" onClick={() => setSeePartOneWorking(!seePartOneWorking)}>{seePartOneWorking ? 'Hide' : 'See'} working</button>
+                </p>
+              }
+            </div>
           </div>
         </div>
 
         {partOneSolution && <p>Solution: {partOneSolution}</p>}
-        {Array.isArray(partOneWorking) && <div className="box">{partOneWorking.map((row, i) => <p key={i}>{row}</p>)}</div>}
+        {
+          Array.isArray(partOneWorking) && seePartOneWorking &&
+          <div className="box">{partOneWorking.map((row, i) => <p key={i}>{row}</p>)}</div>
+        }
       </div>
 
       <div className="block">
         <div className="field">
           <div className="control">
-            <button className="button" onClick={partTwo}>Solve part 2</button>
+            <div className="field is-grouped">
+              <p className="control">
+                <button className="button is-small" onClick={partTwo}>Solve part 2</button>
+              </p>
+              {partOneWorking &&
+                <p className="control">
+                  <button className="button is-small" onClick={() => setSeePartTwoWorking(!seePartTwoWorking)}>{seePartTwoWorking ? 'Hide' : 'See'} working</button>
+                </p>
+              }
+            </div>
           </div>
         </div>
 
         {partTwoSolution && <p>Solution: {partTwoSolution}</p>}
-        {Array.isArray(partTwoWorking) && <div className="box">{partTwoWorking.map((row, i) => <p key={i}>{row}</p>)}</div>}
+        {
+          Array.isArray(partTwoWorking) && seePartTwoWorking &&
+          <div className="box">{partTwoWorking.map((row, i) => <p key={i}>{row}</p>)}</div>
+        }
       </div>
     </div >
   );

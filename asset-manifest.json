@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/advent_of_code_2022/static/css/main.74a71c0c.css",
-    "main.js": "/advent_of_code_2022/static/js/main.99042579.js",
+    "main.js": "/advent_of_code_2022/static/js/main.d20f3286.js",
     "index.html": "/advent_of_code_2022/index.html",
     "main.74a71c0c.css.map": "/advent_of_code_2022/static/css/main.74a71c0c.css.map",
-    "main.99042579.js.map": "/advent_of_code_2022/static/js/main.99042579.js.map"
+    "main.d20f3286.js.map": "/advent_of_code_2022/static/js/main.d20f3286.js.map"
   },
   "entrypoints": [
     "static/css/main.74a71c0c.css",
-    "static/js/main.99042579.js"
+    "static/js/main.d20f3286.js"
   ]
 }

@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom";
-import { Fragment } from 'react';
 import 'bulma/css/bulma.min.css';
 
 import Layout from './components/Layout';

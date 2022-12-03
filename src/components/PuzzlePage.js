@@ -62,7 +62,7 @@ const PuzzlePage = (props) => {
               <p className="control">
                 <button className="button is-small" onClick={partTwo}>Solve part 2</button>
               </p>
-              {partOneWorking &&
+              {partTwoWorking &&
                 <p className="control">
                   <button className="button is-small" onClick={() => setSeePartTwoWorking(!seePartTwoWorking)}>{seePartTwoWorking ? 'Hide' : 'See'} working</button>
                 </p>

@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "type": "github",
+    "username": "bennuttall",
+    "language": "Python",
+    "link": "https://github.com/bennuttall/advent-of-code-2022/blob/main/03/03.ipynb"
+  },
+  {
+    "type": "github",
+    "username": "davidstosik",
+    "language": "Ruby",
+    "link": "https://github.com/davidstosik/advent_of_code/blob/main/lib/advent_of_code/year2022/day3.rb"
+  }
+]

@@ -16,5 +16,23 @@
     "username": "Dominic-Taylor-Dev",
     "language": "Javascript",
     "link": "https://github.com/Dominic-Taylor-Dev/advent-of-code-2022-js/blob/main/day1"
+  },
+  {
+    "type": "github",
+    "username": "bennuttall",
+    "language": "Python",
+    "link": "https://github.com/bennuttall/advent-of-code-2022/blob/main/01/01.ipynb"
+  },
+  {
+    "type": "github",
+    "username": "davidstosik",
+    "language": "Ruby",
+    "link": "https://github.com/davidstosik/advent_of_code/blob/main/lib/advent_of_code/year2022/day1.rb"
+  },
+  {
+    "type": "github",
+    "username": "tubbynl",
+    "language": "Java",
+    "link": "https://github.com/tubbynl/adventofcode/"
   }
 ]

@@ -10,5 +10,11 @@
     "username": "davidstosik",
     "language": "Ruby",
     "link": "https://github.com/davidstosik/advent_of_code/blob/main/lib/advent_of_code/year2022/day3.rb"
+  },
+  {
+    "type": "github",
+    "username": "zangruizhe",
+    "language": "F#",
+    "link": "https://github.com/zangruizhe/AoC/blob/main/AoC2022.fs#L128"
   }
 ]

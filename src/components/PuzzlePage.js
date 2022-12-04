@@ -51,7 +51,7 @@ const PuzzlePage = (props) => {
         {partOneSolution && <p>Solution: {partOneSolution}</p>}
         {
           Array.isArray(partOneWorking) && seePartOneWorking &&
-          <div className="box">{partOneWorking.map((row, i) => <p key={i}>{row}</p>)}</div>
+          <div className="box is-family-monospace">{partOneWorking.map((row, i) => <p key={i}>{row}</p>)}</div>
         }
       </div>
 
@@ -74,7 +74,7 @@ const PuzzlePage = (props) => {
         {partTwoSolution && <p>Solution: {partTwoSolution}</p>}
         {
           Array.isArray(partTwoWorking) && seePartTwoWorking &&
-          <div className="box">{partTwoWorking.map((row, i) => <p key={i}>{row}</p>)}</div>
+          <div className="box is-family-monospace">{partTwoWorking.map((row, i) => <p key={i}>{row}</p>)}</div>
         }
       </div>
     </>

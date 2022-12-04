@@ -28,5 +28,17 @@
     "username": "davidstosik",
     "language": "Ruby",
     "link": "https://github.com/davidstosik/advent_of_code/blob/main/lib/advent_of_code/year2022/day2.rb"
+  },
+  {
+    "type": "youtube",
+    "username": "Neciu Dan",
+    "language": "Javascript",
+    "link": "https://www.youtube.com/watch?v=wReK_hix7Cs"
+  },
+  {
+    "type": "github",
+    "username": "zangruizhe",
+    "language": "F#",
+    "link": "https://github.com/zangruizhe/AoC/blob/main/AoC2022.fs#L38"
   }
 ]

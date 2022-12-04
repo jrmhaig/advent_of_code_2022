@@ -1,0 +1,20 @@
+[
+  {
+    "type": "github",
+    "username": "potapkin-pavel",
+    "language": "Scala",
+    "link": "https://github.com/potapkin-pavel/advent-of-code/blob/main/src/main/scala/advent/code/day4/Main.scala"
+  },
+  {
+    "type": "github",
+    "username": "zangruizhe",
+    "language": "F#",
+    "link": "https://github.com/zangruizhe/AoC/blob/main/AoC2022.fs#L160"
+  },
+  {
+    "type": "github",
+    "username": "xocolatl",
+    "language": "PostgreSQL",
+    "link": "https://github.com/xocolatl/advent-of-code/blob/master/2022/dec04.sql"
+  }
+]

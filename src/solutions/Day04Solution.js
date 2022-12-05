@@ -1,4 +1,5 @@
 import BaseSolution from './BaseSolution'
+import WorkingSimple from '../components/working/Simple';
 
 class Day04Solution extends BaseSolution {
   constructor() {
@@ -23,7 +24,7 @@ class Day04Solution extends BaseSolution {
     });
 
     data.setSolution(cleaningRota.filter(r => r.bad).length);
-    data.setWorking(working);
+    data.setWorking(<WorkingSimple data={working} />);
   }
 
   partOne(data) {

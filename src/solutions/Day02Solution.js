@@ -1,4 +1,5 @@
 import BaseSolution from './BaseSolution'
+import WorkingSimple from '../components/working/Simple';
 
 class Day02Solution extends BaseSolution {
   constructor() {
@@ -25,11 +26,11 @@ class Day02Solution extends BaseSolution {
       .map(game => [...game, this.score(game)]);
 
     data.setSolution(games.reduce((total, game) => game[2] + total, 0));
-    data.setWorking([
+    data.setWorking(<WorkingSimple data={[
       'Game scores:',
       '',
       ...games.map((game, i) => `${i}) ${game[0]} vs ${game[1]} => ${game[2]}`)
-    ]);
+    ]} />);
   }
 
   partTwo(data) {
@@ -39,11 +40,11 @@ class Day02Solution extends BaseSolution {
       .map(game => [...game, this.score(game)]);
 
     data.setSolution(games.reduce((total, game) => game[2] + total, 0));
-    data.setWorking([
+    data.setWorking(<WorkingSimple data={[
       'Game scores:',
       '',
       ...games.map((game, i) => `${i}) ${game[0]} vs ${game[1]} => ${game[2]}`)
-    ]);
+    ]} />);
   }
 
   score(game) {

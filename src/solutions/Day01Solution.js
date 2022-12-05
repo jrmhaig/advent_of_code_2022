@@ -1,4 +1,5 @@
 import BaseSolution from './BaseSolution'
+import WorkingSimple from '../components/working/Simple';
 
 class DayOneSolution extends BaseSolution {
   constructor() {
@@ -11,11 +12,11 @@ class DayOneSolution extends BaseSolution {
     const calories = this.sortedCalories(groups);
 
     data.setSolution(calories[0]);
-    data.setWorking([
+    data.setWorking(<WorkingSimple data={[
       'Sorted calories counts:',
       '',
       ...calories.map((n, i) => `Group ${i} total: ${n}`)
-    ]);
+    ]} />);
   }
 
   partTwo(data) {
@@ -23,11 +24,11 @@ class DayOneSolution extends BaseSolution {
     const calories = this.sortedCalories(groups);
 
     data.setSolution(calories[0] + calories[1] + calories[2]);
-    data.setWorking([
+    data.setWorking(<WorkingSimple data={[
       'Sorted calories counts:',
       '',
       ...calories.map((n, i) => `Group ${i} total: ${n}`)
-    ]);
+    ]} />);
   }
 
   sortedCalories(groups) {

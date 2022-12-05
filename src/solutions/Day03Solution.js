@@ -1,4 +1,5 @@
 import BaseSolution from './BaseSolution'
+import WorkingSimple from '../components/working/Simple';
 
 class Day03Solution extends BaseSolution {
   constructor() {
@@ -37,7 +38,7 @@ class Day03Solution extends BaseSolution {
     intersectionSums.forEach((sum, i) => working.push(`[${i}]  ${sum}`));
 
     data.setSolution(intersectionSums.reduce((total, i) => total + i, 0));
-    data.setWorking(working);
+    data.setWorking(<WorkingSimple data={working} />);
   }
 
   partTwo(data) {
@@ -57,7 +58,7 @@ class Day03Solution extends BaseSolution {
     badges.forEach((badge, i) => working.push(`[${i}] ${badge}, ${this.charValue(badge)}`))
 
     data.setSolution(badges.reduce((total, badge) => total + this.charValue(badge), 0));
-    data.setWorking(working);
+    data.setWorking(<WorkingSimple data={working} />);
   }
 
   explode(str) {

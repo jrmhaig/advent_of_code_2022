@@ -1,12 +1,13 @@
 import { useState } from 'react';
+import WorkingNull from './working/Null';
 
 const PuzzlePage = (props) => {
   const [inputData, setInputData] = useState('');
   const [partOneSolution, setPartOneSolution] = useState(null);
-  const [partOneWorking, setPartOneWorking] = useState(null);
+  const [partOneWorking, setPartOneWorking] = useState(<WorkingNull />);
   const [seePartOneWorking, setSeePartOneWorking] = useState(false);
   const [partTwoSolution, setPartTwoSolution] = useState(null);
-  const [partTwoWorking, setPartTwoWorking] = useState(null);
+  const [partTwoWorking, setPartTwoWorking] = useState(<WorkingNull />);
   const [seePartTwoWorking, setSeePartTwoWorking] = useState(false);
 
   const partOne = () => {
@@ -49,10 +50,7 @@ const PuzzlePage = (props) => {
         </div>
 
         {partOneSolution && <p>Solution: {partOneSolution}</p>}
-        {
-          Array.isArray(partOneWorking) && seePartOneWorking &&
-          <div className="box is-family-monospace">{partOneWorking.map((row, i) => <p key={i}>{row}</p>)}</div>
-        }
+        {partOneWorking && seePartOneWorking && partOneWorking}
       </div>
 
       <div className="block">
@@ -72,10 +70,7 @@ const PuzzlePage = (props) => {
         </div>
 
         {partTwoSolution && <p>Solution: {partTwoSolution}</p>}
-        {
-          Array.isArray(partTwoWorking) && seePartTwoWorking &&
-          <div className="box is-family-monospace">{partTwoWorking.map((row, i) => <p key={i}>{row}</p>)}</div>
-        }
+        {partTwoWorking && seePartTwoWorking && partTwoWorking}
       </div>
     </>
   );

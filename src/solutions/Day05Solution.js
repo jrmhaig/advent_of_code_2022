@@ -7,7 +7,7 @@ class Day05Solution extends BaseSolution {
     this.solved = true;
   }
 
-  partOne(data) {
+  solve(data, mover) {
     const [stacksData, commands] = data.inputData.split(/\r?\n\r?\n/);
     const stacks = this.generateStacks(stacksData);
     const steps = [];
@@ -18,10 +18,7 @@ class Day05Solution extends BaseSolution {
       step.data.push('Before:');
       step.data.push(...this.displayStacks(stacks));
 
-      const fromStack = stacks[+command.from - 1];
-
-      stacks[+command.to - 1].push(...fromStack.slice(fromStack.length - command.move).reverse());
-      stacks[+command.from - 1] = fromStack.slice(0, fromStack.length - command.move);
+      mover({ ...command, stacks: stacks });
 
       step.data.push('=================================')
       step.data.push('After:');
@@ -34,31 +31,12 @@ class Day05Solution extends BaseSolution {
     data.setWorking(<WorkingStepped steps={steps} />);
   }
 
+  partOne(data) {
+    this.solve(data, this.cratemover9000);
+  }
+
   partTwo(data) {
-    const [stacksData, commands] = data.inputData.split(/\r?\n\r?\n/);
-    const stacks = this.generateStacks(stacksData);
-    const steps = [];
-
-    commands.split(/\r?\n/).forEach(rawCommand => {
-      const step = { command: rawCommand, data: [] };
-      const command = this.processCommand(rawCommand);
-      step.data.push('Before:');
-      step.data.push(...this.displayStacks(stacks));
-
-      const fromStack = stacks[+command.from - 1];
-
-      stacks[+command.to - 1].push(...fromStack.slice(fromStack.length - command.move));
-      stacks[+command.from - 1] = fromStack.slice(0, fromStack.length - command.move);
-
-      step.data.push('=================================')
-      step.data.push('After:');
-      step.data.push(...this.displayStacks(stacks));
-
-      steps.push(step);
-    });
-
-    data.setSolution(stacks.map(stack => stack[stack.length - 1]).join(''));
-    data.setWorking(<WorkingStepped steps={steps} />);
+    this.solve(data, this.cratemover9001);
   }
 
   generateStacks(data) {
@@ -84,6 +62,22 @@ class Day05Solution extends BaseSolution {
     const display = [];
     for (let i = nRows - 1; i >= 0; i--) { display.push(stacks.map(stack => `[${stack[i] || ' '}]`).join(' ')); }
     return display;
+  }
+
+  cratemover9000({ stacks, move, from, to }) {
+    const stackTo = stacks[+to - 1];
+    const stackFrom = stacks[+from - 1];
+
+    stackTo.push(...stackFrom.slice(stackFrom.length - move).reverse());
+    stacks[+from - 1] = stackFrom.slice(0, stackFrom.length - move);
+  }
+
+  cratemover9001({ stacks, move, from, to }) {
+    const stackTo = stacks[+to - 1];
+    const stackFrom = stacks[+from - 1];
+
+    stackTo.push(...stackFrom.slice(stackFrom.length - move));
+    stacks[+from - 1] = stackFrom.slice(0, stackFrom.length - move);
   }
 }
 

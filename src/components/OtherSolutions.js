@@ -16,7 +16,7 @@ const OtherSolutions = (props) => {
 
   const card = (i, data) => {
     return (
-      <tr>
+      <tr key={i}>
         <td><FontAwesomeIcon icon={icons[data.type]} /></td>
         <td>{data.username}</td>
         <td><a href={data.link}>{data.language}</a></td>

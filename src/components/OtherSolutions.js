@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faYoutube, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 const OtherSolutions = (props) => {
   const [solutions, setSolutions] = useState({ data: [] });
   const icons = {
     github: faGithub,
-    youtube: faYoutube
+    youtube: faYoutube,
+    google: faGoogle
   };
 
   useEffect(() => {

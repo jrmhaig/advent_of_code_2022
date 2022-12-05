@@ -31,6 +31,12 @@
   },
   {
     "type": "github",
+    "username": "peteryates",
+    "language": "Ruby",
+    "link": "https://github.com/peteryates/advent-of-code-2022/blob/main/01/calories.rb"
+  },
+  {
+    "type": "github",
     "username": "tubbynl",
     "language": "Java",
     "link": "https://github.com/tubbynl/adventofcode/"
@@ -40,5 +46,11 @@
     "username": "zangruizhe",
     "language": "F#",
     "link": "https://github.com/zangruizhe/AoC/blob/main/AoC2022.fs#L9"
+  },
+  {
+    "type": "github",
+    "username": "ellamdav",
+    "language": "Scala",
+    "link": "https://github.com/ellamdav/advent-of-code-2022/blob/main/src/main/scala/Day01.scala"
   }
 ]

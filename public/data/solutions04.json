@@ -7,6 +7,12 @@
   },
   {
     "type": "github",
+    "username": "ellamdav",
+    "language": "Scala",
+    "link": "https://github.com/ellamdav/advent-of-code-2022/blob/main/src/main/scala/Day04.scala"
+  },
+  {
+    "type": "github",
     "username": "zangruizhe",
     "language": "F#",
     "link": "https://github.com/zangruizhe/AoC/blob/main/AoC2022.fs#L160"
@@ -16,5 +22,11 @@
     "username": "xocolatl",
     "language": "PostgreSQL",
     "link": "https://github.com/xocolatl/advent-of-code/blob/master/2022/dec04.sql"
+  },
+  {
+    "type": "github",
+    "username": "peteryates",
+    "language": "Ruby",
+    "link": "https://github.com/peteryates/advent-of-code-2022/blob/main/04/cleanup.rb"
   }
 ]

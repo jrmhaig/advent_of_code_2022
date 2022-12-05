@@ -13,8 +13,20 @@
   },
   {
     "type": "github",
+    "username": "peteryates",
+    "language": "Ruby",
+    "link": "https://github.com/peteryates/advent-of-code-2022/blob/main/03/rucksack.rb"
+  },
+  {
+    "type": "github",
     "username": "zangruizhe",
     "language": "F#",
     "link": "https://github.com/zangruizhe/AoC/blob/main/AoC2022.fs#L128"
+  },
+  {
+    "type": "github",
+    "username": "ellamdav",
+    "language": "Scala",
+    "link": "https://github.com/ellamdav/advent-of-code-2022/blob/main/src/main/scala/Day03.scala"
   }
 ]

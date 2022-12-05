@@ -30,6 +30,12 @@
     "link": "https://github.com/davidstosik/advent_of_code/blob/main/lib/advent_of_code/year2022/day2.rb"
   },
   {
+    "type": "github",
+    "username": "peteryates",
+    "language": "Ruby",
+    "link": "https://github.com/peteryates/advent-of-code-2022/blob/main/02/rock_paper_scissors.rb"
+  },
+  {
     "type": "youtube",
     "username": "Neciu Dan",
     "language": "Javascript",
@@ -40,5 +46,11 @@
     "username": "zangruizhe",
     "language": "F#",
     "link": "https://github.com/zangruizhe/AoC/blob/main/AoC2022.fs#L38"
+  },
+  {
+    "type": "github",
+    "username": "ellamdav",
+    "language": "Scala",
+    "link": "https://github.com/ellamdav/advent-of-code-2022/blob/main/src/main/scala/Day02.scala"
   }
 ]

@@ -28,8 +28,13 @@ const PuzzlePage = (props) => {
         <div className="field">
           <label className="label">Input data</label>
           <div className="control">
-            <textarea className="textarea" placeholder="Input data" onChange={event => setInputData(event.target.value)}></textarea>
+            <textarea className="textarea" placeholder="Input data" onChange={event => setInputData(event.target.value)} value={inputData} />
           </div>
+        </div>
+        <div className="field">
+          <p className="control">
+            <button className="button is-small is-danger" onClick={() => setInputData('')}>Clear</button>
+          </p>
         </div>
       </div>
 

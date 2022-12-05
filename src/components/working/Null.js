@@ -1,5 +1,5 @@
 const WorkingNull = (props) => {
-  return (<div className="box">Boo</div>);
+  return null;
 }
 
 export default WorkingNull;

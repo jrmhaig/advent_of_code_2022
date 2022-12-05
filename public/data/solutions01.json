@@ -52,5 +52,11 @@
     "username": "ellamdav",
     "language": "Scala",
     "link": "https://github.com/ellamdav/advent-of-code-2022/blob/main/src/main/scala/Day01.scala"
+  },
+  {
+    "type": "youtube",
+    "username": "Brent Westbrook",
+    "language": "Rust",
+    "link": "https://www.youtube.com/watch?v=blJqplgyCJ8"
   }
 ]

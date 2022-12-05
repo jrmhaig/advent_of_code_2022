@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "type": "github",
+    "username": "danielmbutler",
+    "language": "Java",
+    "link": "https://github.com/danielmbutler/AdventOfCode/blob/master/src/Day5.java"
+  },
+  {
+    "type": "youtube",
+    "username": "Brent Westbrook",
+    "language": "Rust",
+    "link": "https://www.youtube.com/watch?v=_N_2V8ZWE80"
+  }
+]

@@ -43,6 +43,12 @@
   },
   {
     "type": "github",
+    "username": "danielmbutler",
+    "language": "Java",
+    "link": "https://github.com/danielmbutler/AdventOfCode/blob/master/src/Day1.java"
+  },
+  {
+    "type": "github",
     "username": "zangruizhe",
     "language": "F#",
     "link": "https://github.com/zangruizhe/AoC/blob/main/AoC2022.fs#L9"
@@ -52,5 +58,17 @@
     "username": "ellamdav",
     "language": "Scala",
     "link": "https://github.com/ellamdav/advent-of-code-2022/blob/main/src/main/scala/Day01.scala"
+  },
+  {
+    "type": "youtube",
+    "username": "Neciu Dan",
+    "language": "Javascript",
+    "link": "https://www.youtube.com/watch?v=cgNtdEszZJU"
+  },
+  {
+    "type": "youtube",
+    "username": "Brent Westbrook",
+    "language": "Rust",
+    "link": "https://www.youtube.com/watch?v=blJqplgyCJ8"
   }
 ]

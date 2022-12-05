@@ -52,5 +52,17 @@
     "username": "ellamdav",
     "language": "Scala",
     "link": "https://github.com/ellamdav/advent-of-code-2022/blob/main/src/main/scala/Day02.scala"
+  },
+  {
+    "type": "youtube",
+    "username": "Brent Westbrook",
+    "language": "Rust",
+    "link": "https://www.youtube.com/watch?v=hRJwR_5UFMU"
+  },
+  {
+    "type": "github",
+    "username": "danielmbutler",
+    "language": "Java",
+    "link": "https://github.com/danielmbutler/AdventOfCode/blob/master/src/Day2.java"
   }
 ]

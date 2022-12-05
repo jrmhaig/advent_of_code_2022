@@ -28,5 +28,17 @@
     "username": "peteryates",
     "language": "Ruby",
     "link": "https://github.com/peteryates/advent-of-code-2022/blob/main/04/cleanup.rb"
+  },
+  {
+    "type": "youtube",
+    "username": "Brent Westbrook",
+    "language": "Rust",
+    "link": "https://www.youtube.com/watch?v=8Ol1urr18IM"
+  },
+  {
+    "type": "github",
+    "username": "danielmbutler",
+    "language": "Java",
+    "link": "https://github.com/danielmbutler/AdventOfCode/blob/master/src/Day4.java"
   }
 ]

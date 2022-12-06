@@ -30,6 +30,12 @@
     "link": "https://github.com/peteryates/advent-of-code-2022/blob/main/04/cleanup.rb"
   },
   {
+    "type": "github",
+    "username": "coding-bunny",
+    "language": "Ruby",
+    "link": "https://github.com/coding-bunny/advent-of-code-2022/blob/main/day_5.rb"
+  },
+  {
     "type": "youtube",
     "username": "Brent Westbrook",
     "language": "Rust",
@@ -40,5 +46,23 @@
     "username": "danielmbutler",
     "language": "Java",
     "link": "https://github.com/danielmbutler/AdventOfCode/blob/master/src/Day4.java"
+  },
+  {
+    "type": "github",
+    "username": "7ze",
+    "language": "C",
+    "link": "https://github.com/7ze/advent_of_code_2022/tree/develop/day_4"
+  },
+  {
+    "type": "github",
+    "username": "theronic",
+    "language": "Clojure",
+    "link": "https://github.com/theronic/advent-of-code/blob/main/src/advent_of_code/year2022/day04.clj"
+  },
+  {
+    "type": "github",
+    "username": "kforiordan",
+    "language": "Python",
+    "link": "https://github.com/kforiordan/advent-of-code/tree/main/2022/04-camp-cleanup"
   }
 ]

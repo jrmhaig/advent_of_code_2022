@@ -25,6 +25,12 @@
   },
   {
     "type": "github",
+    "username": "kforiordan",
+    "language": "Python",
+    "link": "https://github.com/kforiordan/advent-of-code/tree/main/2022/02-rock-paper-scissors"
+  },
+  {
+    "type": "github",
     "username": "davidstosik",
     "language": "Ruby",
     "link": "https://github.com/davidstosik/advent_of_code/blob/main/lib/advent_of_code/year2022/day2.rb"
@@ -34,6 +40,12 @@
     "username": "peteryates",
     "language": "Ruby",
     "link": "https://github.com/peteryates/advent-of-code-2022/blob/main/02/rock_paper_scissors.rb"
+  },
+  {
+    "type": "github",
+    "username": "coding-bunny",
+    "language": "Ruby",
+    "link": "https://github.com/coding-bunny/advent-of-code-2022/blob/main/day_5.rb"
   },
   {
     "type": "youtube",
@@ -64,5 +76,17 @@
     "username": "danielmbutler",
     "language": "Java",
     "link": "https://github.com/danielmbutler/AdventOfCode/blob/master/src/Day2.java"
+  },
+  {
+    "type": "github",
+    "username": "7ze",
+    "language": "C",
+    "link": "https://github.com/7ze/advent_of_code_2022/tree/develop/day_2"
+  },
+  {
+    "type": "github",
+    "username": "theronic",
+    "language": "Clojure",
+    "link": "https://github.com/theronic/advent-of-code/blob/main/src/advent_of_code/year2022/day02.clj"
   }
 ]

@@ -5,6 +5,7 @@ class DayOneSolution extends BaseSolution {
   constructor() {
     super(1);
     this.solved = true;
+    this.subtitle = 'Calorie Counting';
   }
 
   partOne(data) {

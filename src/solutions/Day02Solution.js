@@ -5,6 +5,7 @@ class Day02Solution extends BaseSolution {
   constructor() {
     super(2);
     this.solved = true;
+    this.subtitle = 'Rock Paper Scissors';
     this.objects = {
       A: 'Rock',
       B: 'Paper',

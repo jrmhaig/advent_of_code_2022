@@ -5,6 +5,7 @@ class Day03Solution extends BaseSolution {
   constructor() {
     super(3);
     this.solved = true;
+    this.subtitle = 'Rucksack Reorganization';
   }
 
   partOne(data) {

@@ -5,6 +5,7 @@ class Day04Solution extends BaseSolution {
   constructor() {
     super(4);
     this.solved = true;
+    this.subtitle = 'Camp Cleanup';
   }
 
   solve(data, check, checkMessage) {

@@ -5,6 +5,7 @@ class Day07Solution extends BaseSolution {
   constructor() {
     super(7);
     this.solved = true;
+    this.subtitle = 'No Space Left On Device';
   }
 
   partOne(data) {

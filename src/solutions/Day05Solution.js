@@ -5,6 +5,7 @@ class Day05Solution extends BaseSolution {
   constructor() {
     super(5);
     this.solved = true;
+    this.subtitle = 'Supply Stacks';
   }
 
   solve(data, mover) {

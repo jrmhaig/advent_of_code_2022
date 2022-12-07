@@ -5,6 +5,7 @@ const DayPage = (props) => {
     <>
       <div className="container">
         <h1 className="title is-3">{props.solution.title}</h1>
+        {props.solution.subtitle && <h2 className="subtitle is-4">{props.solution.subtitle}</h2>}
 
         {props.solution.solved ||
           <div className="notification is-danger">

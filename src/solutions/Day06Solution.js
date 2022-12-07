@@ -5,6 +5,7 @@ class Day06Solution extends BaseSolution {
   constructor() {
     super(6);
     this.solved = true;
+    this.subtitle = 'Tuning Trouble';
   }
 
   solve(data, n) {

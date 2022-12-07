@@ -13,6 +13,12 @@
   },
   {
     "type": "github",
+    "username": "peteryates",
+    "language": "Ruby",
+    "link": "https://github.com/peteryates/advent-of-code-2022/blob/main/06/datastream.rb"
+  },
+  {
+    "type": "github",
     "username": "theronic",
     "language": "Clojure",
     "link": "https://github.com/theronic/advent-of-code/blob/main/src/advent_of_code/year2022/day06.clj"

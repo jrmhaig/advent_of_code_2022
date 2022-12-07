@@ -19,6 +19,12 @@
   },
   {
     "type": "github",
+    "username": "peteryates",
+    "language": "Ruby",
+    "link": "https://github.com/peteryates/advent-of-code-2022/blob/main/05/cargo.rb"
+  },
+  {
+    "type": "github",
     "username": "7ze",
     "language": "C",
     "link": "https://github.com/7ze/advent_of_code_2022/tree/develop/day_5"

@@ -94,5 +94,11 @@
     "username": "theronic",
     "language": "Clojure",
     "link": "https://github.com/theronic/advent-of-code/blob/main/src/advent_of_code/year2022/day01.clj"
+  },
+  {
+    "type": "github",
+    "username": "asmith-nhsx",
+    "language": "R",
+    "link": "https://github.com/asmith-nhsx/adventofcode/tree/main/aoc2022/q1"
   }
 ]

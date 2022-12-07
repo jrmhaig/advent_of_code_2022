@@ -12,7 +12,7 @@ const DayPage = (props) => {
           </div>}
 
         <p className="block">
-          <a className="tag is-info" href={props.solution.aocpnk}>View puzzle on Advent of Code</a>
+          <a className="tag is-info" href={props.solution.aocLink}>View puzzle on Advent of Code</a>
         </p>
 
         <div className="tabs">

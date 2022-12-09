@@ -64,5 +64,11 @@
     "username": "kforiordan",
     "language": "Python",
     "link": "https://github.com/kforiordan/advent-of-code/tree/main/2022/04-camp-cleanup"
+  },
+  {
+    "type": "github",
+    "username": "jomartigal",
+    "language": "Kotlin",
+    "link": "https://github.com/jomartigcal/advent-of-code/blob/main/advent-of-code-2022/src/main/kotlin/Day04.kt"
   }
 ]

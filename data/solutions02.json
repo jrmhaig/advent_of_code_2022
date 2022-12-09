@@ -88,5 +88,11 @@
     "username": "theronic",
     "language": "Clojure",
     "link": "https://github.com/theronic/advent-of-code/blob/main/src/advent_of_code/year2022/day02.clj"
+  },
+  {
+    "type": "github",
+    "username": "jomartigal",
+    "language": "Kotlin",
+    "link": "https://github.com/jomartigcal/advent-of-code/blob/main/advent-of-code-2022/src/main/kotlin/Day02.kt"
   }
 ]

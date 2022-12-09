@@ -4,12 +4,13 @@ import WorkingStepped from '../components/working/Stepped';
 class Day09Solution extends BaseSolution {
   constructor() {
     super(9);
-    this.solved = false;
+    this.solved = true;
+    this.subtitle = 'Rope Bridge';
   }
 
-  partOne(data) {
+  solve(data, n) {
     const rules = data.inputData.split(/\r?\n/).map(rule => new Day09Rule(rule));
-    const state = new Day09State();
+    const state = new Day09StateTwo(n);
     const steps = [];
 
     rules.forEach(rule => {
@@ -21,80 +22,51 @@ class Day09Solution extends BaseSolution {
       steps.push({ command: rule.display(), data: data })
     });
 
-    data.setSolution(state.countCovered());
+    data.setSolution(state.head.countCovered());
     data.setWorking(<WorkingStepped steps={steps} />);
   }
 
+  partOne(data) {
+    this.solve(data, 1);
+  }
+
   partTwo(data) {
-    super.partTwo(data);
+    this.solve(data, 9);
   }
 }
 
-class Day09State {
-  DIRECTIONS = {
-    L: [-1, 0],
-    R: [1, 0],
-    U: [0, 1],
-    D: [0, -1]
-  }
-
-  constructor() {
-    this.head_x = 0;
-    this.head_y = 0;
-    this.tail_x = 0;
-    this.tail_y = 0;
-    this.max_x = 0;
-    this.max_y = 0;
-    this.min_x = 0;
-    this.min_y = 0;
-    this.covered = {};
+class Day09StateTwo {
+  constructor(n) {
+    this.head = new Day09Link();
+    for (let i = 0; i < n; i++) {
+      this.head.grow();
+    }
   }
 
   apply(rule) {
-    const direction = this.DIRECTIONS[rule.direction];
     for (let i = 0; i < rule.count; i++) {
-      this.head_x += direction[0];
-      this.head_y += direction[1];
-
-      // Drag tail
-      if (Math.abs(this.head_x - this.tail_x) > 1) {
-        this.tail_y = this.head_y;
-        this.tail_x = (this.head_x > this.tail_x) ? this.head_x - 1 : this.head_x + 1;
-      } else if (Math.abs(this.head_y - this.tail_y) > 1) {
-        this.tail_x = this.head_x;
-        this.tail_y = (this.head_y > this.tail_y) ? this.head_y - 1 : this.head_y + 1;
-      }
-      this.markCovered();
+      this.head.move(rule.direction);
     }
   }
 
   display() {
     let map = [];
-    for (let y = this.max_y; y >= this.min_y; y--) {
+    const min_x = this.head.min_x();
+    const min_y = this.head.min_y();
+    const max_x = this.head.max_x();
+    const max_y = this.head.max_y();
+
+    map.push(`X range: ${min_x} - ${max_x}`);
+    map.push(`Y range: ${min_y} - ${max_y}`);
+
+    for (let y = max_y; y >= min_y; y--) {
       let row = '';
-      for (let x = this.min_x; x <= this.max_x; x++) {
-        row += (x === this.head_x && y === this.head_y)
-          ? 'H'
-          : (x === this.tail_x && y === this.tail_y)
-            ? 'T'
-            : (this.covered[x] && this.covered[x][y]) ? '#' : '.';
+      for (let x = min_x; x <= max_x; x++) {
+        row += this.head.marker(x, y);
       }
       map.push(row);
     }
     return map;
-  }
-
-  markCovered() {
-    if (!this.covered[this.tail_x]) { this.covered[this.tail_x] = {} };
-    this.covered[this.tail_x][this.tail_y] = true;
-    this.min_x = Math.min(this.min_x, this.tail_x, this.head_x);
-    this.min_y = Math.min(this.min_y, this.tail_y, this.head_y);
-    this.max_x = Math.max(this.max_x, this.tail_x, this.head_x);
-    this.max_y = Math.max(this.max_y, this.tail_y, this.head_y);
-  }
-
-  countCovered() {
-    return Object.keys(this.covered).reduce((total, x) => total + Object.keys(this.covered[x]).length, 0);
   }
 }
 
@@ -106,6 +78,120 @@ class Day09Rule {
 
   display() {
     return `Move ${this.count} steps in direction ${this.direction}`;
+  }
+}
+
+class Day09Link {
+  DIRECTIONS = {
+    L: [-1, 0],
+    R: [1, 0],
+    U: [0, 1],
+    D: [0, -1]
+  }
+
+  constructor(previous) {
+    this.previous = previous;
+    this.covered = {};
+    if (previous) {
+      previous.next = this;
+      this.mark = this.previous.mark + 1;
+      this.x = this.previous.x;
+      this.y = this.previous.y;
+    } else {
+      this.next = null;
+      this.mark = 0;
+      this.x = 0;
+      this.y = 0;
+    }
+  }
+
+  grow() {
+    if (this.next) {
+      this.next.grow();
+    } else {
+      this.next = new Day09Link(this);
+    }
+  }
+
+  move(direction) {
+    const [x, y] = this.DIRECTIONS[direction];
+    this.x += x;
+    this.y += y;
+    if (this.next) { this.next.drag(direction); }
+    this.markCovered();
+  }
+
+  drag(direction) {
+    if (Math.abs(this.y - this.previous.y) <= 1 && Math.abs(this.x - this.previous.x) <= 1) { return; }
+
+    if (this.x === this.previous.x) {
+      if (this.y > this.previous.y) {
+        this.y -= 1;
+      } else if (this.y < this.previous.y) {
+        this.y += 1;
+      }
+    } else if (this.y === this.previous.y) {
+      if (this.x > this.previous.x) {
+        this.x -= 1;
+      } else if (this.x < this.previous.x) {
+        this.x += 1;
+      }
+    } else {
+      this.x += (this.x < this.previous.x) ? 1 : -1;
+      this.y += (this.y < this.previous.y) ? 1 : -1;
+    }
+
+    if (this.next) {
+      this.next.drag();
+    }
+  }
+
+  min_x() {
+    if (this.next) { return Math.min(this.x, this.next.min_x()); }
+
+    return this.x;
+  }
+
+  min_y() {
+    if (this.next) { return Math.min(this.y, this.next.min_y()); }
+
+    return this.y;
+  }
+
+  max_x() {
+    if (this.next) { return Math.max(this.x, this.next.max_x()); }
+
+    return this.x;
+  }
+
+  max_y() {
+    if (this.next) { return Math.max(this.y, this.next.max_y()); }
+
+    return this.y;
+  }
+
+  marker(x, y) {
+    if (this.x === x && this.y === y) { return this.mark; }
+    if (this.next) { return this.next.marker(x, y); }
+    return '.';
+  }
+
+  markCovered() {
+    const [x, y] = this.tail();
+    if (!this.covered[x]) { this.covered[x] = {} };
+    this.covered[x][y] = true;
+  }
+
+  countCovered() {
+    return Object.keys(this.covered).reduce((total, x) => total + Object.keys(this.covered[x]).length, 0);
+  }
+
+  tail() {
+    if (this.next) {
+      return this.next.tail();
+    } else {
+      return [this.x, this.y];
+    }
   }
 }
 

@@ -100,5 +100,11 @@
     "username": "asmith-nhsx",
     "language": "R",
     "link": "https://github.com/asmith-nhsx/adventofcode/tree/main/aoc2022/q1"
+  },
+  {
+    "type": "github",
+    "username": "jomartigal",
+    "language": "Kotlin",
+    "link": "https://github.com/jomartigcal/advent-of-code/blob/main/advent-of-code-2022/src/main/kotlin/Day01.kt"
   }
 ]
